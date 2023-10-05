@@ -1,10 +1,12 @@
 <script>
 import WatcherMain from './components/watcher-main.vue';
+import CompositionComputed from './components/composition-computed.vue';
+import propsUse from './components/props-use.vue';
 export default {
   name: 'App', 
   components: {
-    WatcherMain,
-  },
+    WatcherMain, CompositionComputed, propsUse
+},
   data() {
     return {
       
@@ -16,7 +18,10 @@ export default {
 
 <template>
 <div>
-<WatcherMain/>
+
+<!-- <WatcherMain/> -->
+<CompositionComputed/>
+<propsUse firstName="david" lastName="lopez"/>
 </div>
 </template>
 
