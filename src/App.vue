@@ -1,11 +1,11 @@
 <script>
-import TemplateRef from './components/template-ref.vue';
+import ScriptSetup from './components/script-setup.vue';
 import { provide } from 'vue';
 
 export default {
   name: 'App', 
   components: {
-    TemplateRef
+    ScriptSetup
 },
 setup() {
   provide("username", "EdwMacias");
@@ -22,7 +22,7 @@ setup() {
 
 <template>
 <div>
-<TemplateRef firstName="Edwar" lastName="Macias"/>
+<ScriptSetup />
 
 </div>
 </template>
