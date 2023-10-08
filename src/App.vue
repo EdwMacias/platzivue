@@ -1,11 +1,11 @@
 <script>
-import ProvideInject from './components/provide-inject.vue';
+import TemplateRef from './components/template-ref.vue';
 import { provide } from 'vue';
 
 export default {
   name: 'App', 
   components: {
-    ProvideInject
+    TemplateRef
 },
 setup() {
   provide("username", "EdwMacias");
@@ -22,7 +22,7 @@ setup() {
 
 <template>
 <div>
-<ProvideInject firstName="Edwar" lastName="Macias"/>
+<TemplateRef firstName="Edwar" lastName="Macias"/>
 
 </div>
 </template>

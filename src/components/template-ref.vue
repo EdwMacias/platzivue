@@ -1,0 +1,41 @@
+<template>
+    <div>
+    {{ fullName }}
+    <div>Username:  {{ username }}</div>
+    <button ref="btn">click!</button>
+    </div>
+</template>
+
+<script>
+import {ref, toRefs, computed, inject, watch } from 'vue';
+
+export default {
+    props: {
+        firstName: String,
+        lastName: String,
+    },
+    setup(props, { expose }) {
+        
+        const { firstName, lastName} = toRefs(props);
+
+        const fullName = computed(() => {
+            return `${firstName.value} ${lastName.value}`;
+        });
+
+        const username = inject("username");
+
+        expose({ 
+            fullName
+        });
+        
+        const btn = ref(null);
+        console.log(btn.value);
+        watch(() => btn.value, (valor) => {
+            console.log(valor);
+        })
+        return {
+            fullName, username, btn
+        };
+    },
+};
+</script>
