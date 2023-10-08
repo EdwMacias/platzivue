@@ -1,12 +1,16 @@
 <script>
-import WatcherMain from './components/watcher-main.vue';
-import CompositionComputed from './components/composition-computed.vue';
-import propsUse from './components/props-use.vue';
+import ProvideInject from './components/provide-inject.vue';
+import { provide } from 'vue';
+
 export default {
   name: 'App', 
   components: {
-    WatcherMain, CompositionComputed, propsUse
+    ProvideInject
 },
+setup() {
+  provide("username", "EdwMacias");
+},
+
   data() {
     return {
       
@@ -18,10 +22,8 @@ export default {
 
 <template>
 <div>
+<ProvideInject firstName="Edwar" lastName="Macias"/>
 
-<!-- <WatcherMain/> -->
-<CompositionComputed/>
-<propsUse firstName="david" lastName="lopez"/>
 </div>
 </template>
 
